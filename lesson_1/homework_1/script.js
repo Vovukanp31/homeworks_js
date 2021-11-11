@@ -31,7 +31,7 @@ alert(k);
 alert(l);
 alert(m);
 
-document.write(a, b, c, d, e, f, g, h, i, j, k, l, m);
+document.write(`${a} ${b} ${c} ${d} ${e} ${f} ${g} ${h} ${i} ${j} ${k} ${l} ${m}`);
 
 // - Переприсвоїти кожній змінній з завдання значення на довільне.
 //     Вивести кожну змінну за допомогою: console.log , alert, document.write
@@ -43,7 +43,7 @@ d = 'happening';
 e = 'here';
 f = 'but';
 g = "i'm";
-h = 'what';
+h = "don't know what";
 i = 'exactly';
 j = 'it';
 k = 'is';
@@ -66,7 +66,7 @@ alert(k);
 alert(l);
 alert(m);
 
-document.write(a, b, c, d, e, f, g, h, i, j, k, l, m);
+document.write(`${a} ${b} ${c} ${d} ${e} ${f} ${g} ${h} ${i} ${j} ${k} ${l} ${m}`);
 
 // - Створити 3 змінних firstName, middleName, lastName, наповнити їх своїм ПІБ. З'єднати їх в одну змінну person. (Не об'єкт)
 
