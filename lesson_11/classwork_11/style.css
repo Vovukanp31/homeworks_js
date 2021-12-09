@@ -1,0 +1,41 @@
+.usersContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.userBlock {
+    border: 4px black solid;
+    border-radius: 4px;
+    padding: 10px;
+    width: 90%;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.userInfo {
+font-size: 24px;
+    font-weight: bold;
+}
+
+.userBlock > button {
+    color: bisque;
+    background-color: lightblue;
+    border: 1px lightblue;
+    border-radius: 5px;
+}
+
+.userBlock > button:hover {
+    border-radius: 8px;
+}
+
+.userBlock > button:active {
+    transition: 2ms;
+    background-color: #74d2fc;
+    border: 2px #74d2fc;
+}
