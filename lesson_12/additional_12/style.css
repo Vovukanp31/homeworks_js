@@ -1,0 +1,57 @@
+.user-card, .user-card .post, .user-card .comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    font-size: 24px;
+    padding: 10px;
+}
+.user-card {
+    background-color: burlywood;
+    margin-bottom: 10px;
+    border: solid 2px black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.user-card .post {
+    background-color: cadetblue;
+}
+
+.user-card .comment {
+    background-color: bisque;
+}
+
+.user-card > button {
+    font-size: 24px;
+}
+
+.user-comments-btn {
+    background-color: bisque;
+    color: cadetblue;
+}
+
+.user-posts-btn {
+    background-color: cadetblue;
+    color: bisque;
+}
+
+.user-card > div {
+    background-color: coral;
+}
+
+.user-card .post > div {
+    background-color: bisque;
+}
+
+.user-card .comment > div {
+    background-color: cadetblue;
+    color: white;
+}
+
+.user-card .post > div, .user-card .comment > div, .user-card > div {
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+}

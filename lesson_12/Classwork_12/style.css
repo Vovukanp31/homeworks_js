@@ -1,0 +1,23 @@
+.post, .comment {
+    margin-bottom: 10px;
+    border: 2px solid black;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.comment {
+    background-color: #74d2fc;
+}
+
+.post > div, .comment > div {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.comment > div {
+    color: white;
+}
