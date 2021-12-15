@@ -13,9 +13,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
             let userPosts = document.createElement('button');
             userPosts.innerText = 'Show all posts';
             userPosts.className = 'user-posts-btn';
-            let userComments = document.createElement('button');
-            userComments.innerText = 'Show all comments';
-            userComments.className = 'user-comments-btn';
+
 
             let arrElemCreator = function (obj) {
                 for (const objElement in obj) {
@@ -43,53 +41,57 @@ fetch('https://jsonplaceholder.typicode.com/users')
                                 let idInArr = document.createElement('div');
                                 let userTitle = document.createElement('div');
                                 let bodyOfUserObj = document.createElement('div');
+                                let userComments = document.createElement('button');
+                                userComments.innerText = 'Show all comments';
+                                userComments.className = 'user-comments-btn';
 
                                 userId.innerText = `user id is: ${value1Element.userId};`;
                                 idInArr.innerText = `id in object is: ${value1Element.id};`;
                                 userTitle.innerText = `Title: ${value1Element.title};`;
                                 bodyOfUserObj.innerText = `Info about user: ${value1Element.body};`;
 
+                                userComments.onclick = function () {
+                                    fetch('https://jsonplaceholder.typicode.com/comments')
+                                        .then(response => response.json())
+                                        .then(value2 => {
+                                            for (const valueElement2 of value2) {
+                                                if (valueElement2.postId === value1Element.userId) {
+                                                    let comment = document.createElement('div');
+                                                    comment.className = 'comment';
+
+                                                    let name = document.createElement('div');
+                                                    let email = document.createElement('div');
+                                                    let bodyOfUserObj = document.createElement('div');
+
+                                                    name.innerText = `Name : ${valueElement2.name}`;
+                                                    email.innerText = `Email: ${valueElement2.email}`;
+                                                    bodyOfUserObj.innerText = `Comment: ${valueElement2.body}`;
+
+                                                    post.append(comment);
+                                                    comment.append(name);
+                                                    comment.append(email);
+                                                    comment.append(bodyOfUserObj);
+                                                }
+                                            }
+                                        })
+                                    userComments.disabled = 'true';
+                                };
+
                                 userProfile.append(post);
                                 post.append(userId);
                                 post.append(idInArr);
                                 post.append(userTitle);
                                 post.append(bodyOfUserObj);
+                                post.append(userComments);
                             }
                         }
                     })
                 userPosts.disabled = 'true';
             };
 
-            userComments.onclick = function () {
-                fetch('https://jsonplaceholder.typicode.com/comments')
-                    .then(response => response.json())
-                    .then(value1 => {
-                        for (const valueElement1 of value1) {
-                            if (valueElement1.postId === valueElement.id) {
-                                let comment = document.createElement('div');
-                                comment.className = 'comment';
-
-                                let name = document.createElement('div');
-                                let email = document.createElement('div');
-                                let bodyOfUserObj = document.createElement('div');
-
-                                name.innerText = `Name : ${valueElement1.name}`;
-                                email.innerText = `Email: ${valueElement1.email}`;
-                                bodyOfUserObj.innerText = `Comment: ${valueElement1.body}`;
-
-                                userProfile.append(comment);
-                                comment.append(name);
-                                comment.append(email);
-                                comment.append(bodyOfUserObj);
-                            }
-                        }
-                    })
-                userComments.disabled = 'true';
-            };
 
             arrElemCreator(valueElement);
             document.body.append(userProfile);
             userProfile.append(userPosts)
-            userProfile.append(userComments);
         }
-    })
+    });

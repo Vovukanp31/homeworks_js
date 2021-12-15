@@ -9,6 +9,13 @@
     row-gap: 10px;
 }
 
+.posts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 5px;
+}
+
 .comment {
     background-color: #74d2fc;
 }

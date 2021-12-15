@@ -10,6 +10,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
         for (const valueElement of value) {
             let post = document.createElement('div');
             post.className = 'post';
+            let postsContainer = document.getElementsByClassName('posts-container')[0];
 
             let userId = document.createElement('div');
             let idInArr = document.createElement('div');
@@ -21,7 +22,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
             userTitle.innerText = `Title: ${valueElement.title};`;
             bodyOfUserObj.innerText = `Info about user: ${valueElement.body};`;
 
-            document.body.append(post);
+            postsContainer.append(post);
             post.append(userId);
             post.append(idInArr);
             post.append(userTitle);
